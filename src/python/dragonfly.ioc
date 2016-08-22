@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="f6a19105-e546-4488-89de-fa6d7bd549e4" last-modified="2014-07-03T02:40:06" xmlns="http://schemas.mandiant.com/2010/ioc">
+  <short_description>DragonFly ICS SCADA Compromise</short_description>
+  <description>The Dragonfly group, which is also known by other vendors as Energetic Bear, are a capable group who are evolving over time and targeting primarily the energy sector and related industries. They have been in operation since at least 2011 but may have been active even longer than that. Dragonfly initially targeted defense and aviation companies in the US and Canada before shifting its focus to US and uropean energy firms in early 2013. More recent targets have included companies related to industrial control systems.</description>
+  <authored_by>@iocbucket</authored_by>
+  <authored_date>2014-07-03T02:02:19</authored_date>
+  <links />
+  <definition>
+    <Indicator operator="OR" id="920b1f14-f467-4e65-9a01-cf04d8858035">
+      <IndicatorItem id="2514be2d-ef14-40a2-8d5c-adc337237dcf" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">mahsms.ir/wp-includes/pomo/dtsrc.php</Content>
+      </IndicatorItem>
+      <IndicatorItem id="ed331ecc-c1be-4d4f-a934-e850393d58e1" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">Inden2i.php</Content>
+      </IndicatorItem>
+      <IndicatorItem id="20c6cb3d-8522-48e0-a0a0-fd1985d444fd" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">inden2i.html</Content>
+      </IndicatorItem>
+      <IndicatorItem id="9a6de176-93f3-47b7-8d60-612376acdd7b" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">plugindetect.js</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6f6d02ec-af91-4545-a54a-39e63832acde" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">stoh.html</Content>
+      </IndicatorItem>
+      <IndicatorItem id="a4365ed1-3570-4720-a5d2-05262b47b6f0" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">stoh.jar</Content>
+      </IndicatorItem>
+      <IndicatorItem id="cfa52727-507e-4c6b-bf6c-c9aa69e2f068" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">gami.html</Content>
+      </IndicatorItem>
+      <IndicatorItem id="d3169671-43a8-4665-8815-07b5f7ba4f19" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">gami.jar</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e7bf12dc-8e36-44d8-96fa-c95bc011fc1b" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">tubc.html</Content>
+      </IndicatorItem>
+      <IndicatorItem id="f1a2a33d-c972-4fa1-8a92-1a964a93e1fc" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">negc.html</Content>
+      </IndicatorItem>
+      <IndicatorItem id="1c6b036b-a77b-41a3-a32e-16ba1121e026" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">TMPprovider038.dll</Content>
+      </IndicatorItem>
+      <IndicatorItem id="3a53dde2-aed6-4461-8a24-7bd4bfade997" condition="contains">
+        <Context document="DnsEntryItem" search="DnsEntryItem/RecordName" type="mir" />
+        <Content type="string">securityxploded.com/browser-password-decryptor.php</Content>
+      </IndicatorItem>
+      <IndicatorItem id="4b65a38b-937e-44ef-b669-70f0be942bb2" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">Form.api</Content>
+      </IndicatorItem>
+      <IndicatorItem id="6c4cd51d-8ab5-432a-9315-73f32053f2c3" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">inact.api</Content>
+      </IndicatorItem>
+      <IndicatorItem id="27c80d34-cb43-4979-acbd-fea5916f6d6b" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">prog.cer</Content>
+      </IndicatorItem>
+      <IndicatorItem id="aa1ec420-6ea5-4425-bf8d-e93206e8c627" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">Cent.api</Content>
+      </IndicatorItem>
+      <IndicatorItem id="16c92484-b27c-4129-b8fd-5c28bc5d532d" condition="is">
+        <Context document="FileItem" search="FileItem/FileName" type="mir" />
+        <Content type="string">ie.pdb</Content>
+      </IndicatorItem>
+      <IndicatorItem id="2ececc18-b967-4122-b9e7-9b3a73ae9f48" condition="is">
+        <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+        <Content type="string">C:\ProgramData\Mail\MailAg\gl</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0d67a66c-0aec-4141-98c3-a8fb28d10ca4" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir" />
+        <Content type="IP">91.203.6.71</Content>
+      </IndicatorItem>
+      <IndicatorItem id="e5ddb583-e333-47cd-ab1d-5c4140fc11b8" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir" />
+        <Content type="IP">93.171.216.118</Content>
+      </IndicatorItem>
+      <IndicatorItem id="0c234a2d-94e9-4dd0-b354-73e3984f3ca7" condition="is">
+        <Context document="PortItem" search="PortItem/remoteIP" type="mir" />
+        <Content type="IP">93.188.161.235</Content>
+      </IndicatorItem>
+      <Indicator operator="AND" id="68c34778-b832-4dbb-a2c5-8af190cee8d4">
+        <IndicatorItem id="659af9ed-8e1d-46f6-9ae4-27b04f246ff4" condition="contains">
+          <Context document="Email" search="Email/From" type="mir" />
+          <Content type="string">@gmail.com</Content>
+        </IndicatorItem>
+        <Indicator operator="OR" id="711a02c4-749d-40e9-a5eb-61fbeab0f720">
+          <IndicatorItem id="d6763c38-ac89-4ec3-910b-5ab566c69522" condition="is">
+            <Context document="Email" search="Email/Subject" type="mir" />
+            <Content type="string">The account</Content>
+          </IndicatorItem>
+          <IndicatorItem id="6596cdcd-2705-4b57-aad8-cafb238d976e" condition="is">
+            <Context document="Email" search="Email/Subject" type="mir" />
+            <Content type="string">Settlement of delivery problem</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator operator="AND" id="623d8905-d7a2-44f4-b428-aaf4d4442f38">
+        <IndicatorItem id="b1f121e2-2a04-4718-ab17-5404117b1fa4" condition="contains">
+          <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+          <Content type="string">Temp</Content>
+        </IndicatorItem>
+        <Indicator operator="OR" id="ba2f6ca6-aa57-4b58-8bf0-a9f883741a77">
+          <IndicatorItem id="52f3aa6b-0b47-4b0a-9e73-cf300e776e61" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">qln.dbx</Content>
+          </IndicatorItem>
+          <IndicatorItem id="9b18856a-2402-4f13-ad88-c5306fc0bbbc" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">.dbx</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator operator="OR" id="8973f5b2-5d0d-4a51-b9c7-1cad8b5c157f">
+        <IndicatorItem id="b43c244d-ed41-4c73-8fb1-2d012cad8362" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir" />
+          <Content type="string">\Software\Microsoft\Windows\CurrentVersion\Run\?TmProvider?</Content>
+        </IndicatorItem>
+        <IndicatorItem id="55773b73-e9ab-4d8f-95b6-984d443fa279" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir" />
+          <Content type="string">SOFTWARE\Microsoft\Windows\CurrentVersion\Run\?TmProvider?</Content>
+        </IndicatorItem>
+        <IndicatorItem id="63a3c893-16bc-4970-84f1-e26c745e0299" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir" />
+          <Content type="string">SOFTWARE\Microsoft\Internet Explorer\InternetRegistry\?fertger?</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9b562f11-c333-472c-a2a2-2c483f844c0f" condition="contains">
+          <Context document="RegistryItem" search="RegistryItem/Path" type="mir" />
+          <Content type="string">\SOFTWARE\Microsoft\Internet Explorer\InternetRegistry</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="OR" id="e6b3c1eb-4952-484d-a265-3a585f83799a">
+        <IndicatorItem id="e8a997cc-efe5-4a66-a511-278c870f27cd" condition="contains">
+          <Context document="Network" search="Network/HTTP_Referr" type="mir" />
+          <Content type="string">toons.freesexycomics.com</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c2ba4382-344d-4e5d-9365-acf76e5040db" condition="contains">
+          <Context document="Network" search="Network/UserAgent" type="mir" />
+          <Content type="string">Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.36 Safari/525.19 </Content>
+        </IndicatorItem>
+        <IndicatorItem id="90e9a8bf-56f5-468e-a15f-8a3df55d85a1" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">/wp08/wp-includes/dtcla.php?id</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ea9c2a16-4382-4136-bbb6-13db6166f55d" condition="contains">
+          <Context document="Network" search="Network/String" type="mir" />
+          <Content type="string">&gt;No data!&lt;!</Content>
+        </IndicatorItem>
+        <IndicatorItem id="00ee3868-9e3a-4c6b-873e-d34baba74307" condition="contains">
+          <Context document="Network" search="Network/String" type="mir" />
+          <Content type="string">havex</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="AND" id="3d66acf6-ca5f-4792-8d6b-c62dcedcf059">
+        <IndicatorItem id="250f4d0d-0d46-4986-8c28-8ddf9a0088a1" condition="contains">
+          <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+          <Content type="string">AppData</Content>
+        </IndicatorItem>
+        <Indicator operator="OR" id="95ea7f3e-d06e-46f4-b08d-a9d61dce032a">
+          <IndicatorItem id="d26d1027-aff3-4223-b9b6-6f4dd4c0f0a9" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Microsoft WCF services</Content>
+          </IndicatorItem>
+          <IndicatorItem id="a75fb731-e826-4804-8fee-7f1c8445114f" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Broker services</Content>
+          </IndicatorItem>
+          <IndicatorItem id="7b5f525c-00e8-45a7-afdc-791f79ad3803" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Flash Utilities</Content>
+          </IndicatorItem>
+          <IndicatorItem id="07ed18b7-4e60-48f3-9e31-2d92317a61de" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Media Center Programs</Content>
+          </IndicatorItem>
+          <IndicatorItem id="31f1e260-1c3f-4aba-af0a-07cfb1f7751d" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Policy Definitions</Content>
+          </IndicatorItem>
+          <IndicatorItem id="dfff4b51-2df4-4743-9d56-71de4b5be43a" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Microsoft Web Tools</Content>
+          </IndicatorItem>
+          <IndicatorItem id="77f17c6b-32e1-41b7-8ed1-ba9fee178db2" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Reference Assemblies</Content>
+          </IndicatorItem>
+          <IndicatorItem id="1a3b50d8-0b54-416c-a754-da65eada6a18" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Analysis Services</Content>
+          </IndicatorItem>
+          <IndicatorItem id="555227cf-ef95-40f5-a427-9500a1504a29" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">InstallShield Information</Content>
+          </IndicatorItem>
+          <IndicatorItem id="397cfa87-601a-45cf-8c5a-f05392e10e23" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">IIS SQL Server</Content>
+          </IndicatorItem>
+          <IndicatorItem id="f3227051-5611-40e7-a6cd-7dcfdddf2aac" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">Diagnostics</Content>
+          </IndicatorItem>
+          <IndicatorItem id="4909ad48-431b-4342-bebd-69567b56be34" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">NTAPI Perfomance</Content>
+          </IndicatorItem>
+          <IndicatorItem id="68cc91e0-1bfa-4c1c-afae-d8685e95eefc" condition="contains">
+            <Context document="FileItem" search="FileItem/FilePath" type="mir" />
+            <Content type="string">WPF Platform</Content>
+          </IndicatorItem>
+        </Indicator>
+        <Indicator operator="OR" id="be51a491-6e12-4b8e-80a0-f90f73133971">
+          <IndicatorItem id="b8fc4a64-44f9-4d63-b44d-3a2ac2436f13" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">SearchIndexer.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="07cbbbe9-2eda-4969-80a5-8e2e672682ca" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">ImeBroker.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="63ebdab1-276c-412e-be5b-17cd5cdd107a" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">fsutil.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="58f0dd6a-fbdc-45f3-85fb-2545ff3d3469" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">PnPutil.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="55a9700e-a946-4beb-b754-5b4136d02159" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">BdeUISrv.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="e9c2cc85-d079-48fa-9ec3-3fff5e1029a4" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">WinSAT.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="bc16b359-75c3-4d01-94fa-b1e396890c36" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">pwNative.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="b34af7dc-8e9b-4f20-afd9-fe71e11e90bc" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">SnippingTool.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="56a469ae-8ca9-416e-8dbc-66f3d6c39f44" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">DFDWizard.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="ab86b9df-46c5-40eb-bd55-bdd68983dff7" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">PrintBrmEngine.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="c0069d28-eb07-4d94-92b4-d59621f3f07b" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">WbemMonitor.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="752b8ec2-522b-4bfa-86f9-dbe9646be4d8" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">dxpserver.exe</Content>
+          </IndicatorItem>
+          <IndicatorItem id="f2975302-1296-4bab-b9a1-a5f7d9e36098" condition="is">
+            <Context document="FileItem" search="FileItem/FileName" type="mir" />
+            <Content type="string">PowerMng.exe</Content>
+          </IndicatorItem>
+        </Indicator>
+      </Indicator>
+      <Indicator operator="OR" id="796e4866-e050-4caf-b78d-bd5687d5dba5">
+        <IndicatorItem id="c8a0d127-89dc-49d6-9b90-628871b2c8ca" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">/check_value.php</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aa52be81-f5c0-4e4a-87ab-74def776a4b5" condition="contains">
+          <Context document="Network" search="Network/String" type="mir" />
+          <Content type="string">identifiant=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7290ea69-dec5-4314-a60d-204d8f4c1488" condition="contains">
+          <Context document="Network" search="Network/String" type="mir" />
+          <Content type="string">work:</Content>
+        </IndicatorItem>
+        <IndicatorItem id="21c2385a-743d-41ba-93f4-24538509974a" condition="contains">
+          <Context document="Network" search="Network/UserAgent" type="mir" />
+          <Content type="string">? Mozilla/17.0 (compatible; MSIE 8.0; Windows NT 6.1; .NET CLR 2.0.50727; .NET CLR 3.5.30729)</Content>
+        </IndicatorItem>
+        <IndicatorItem id="056741dd-b83c-4bb3-b839-b9112c0b25d8" condition="contains">
+          <Context document="Network" search="Network/UserAgent" type="mir" />
+          <Content type="string">Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; .NET CLR 2.0.50727; .NET CLR 3.5.30729)</Content>
+        </IndicatorItem>
+      </Indicator>
+      <Indicator operator="AND" id="a9686867-53b8-4e37-a94d-71d6cd45b746">
+        <IndicatorItem id="7f13ac91-8466-4042-8516-314b9746c67c" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">\.php\?id=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7bb893a8-502b-4079-a231-df74442aaefa" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">&amp;v1=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7688db37-7c8d-434d-8dd4-2130e575d375" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">&amp;v2=</Content>
+        </IndicatorItem>
+        <IndicatorItem id="19dc7aa5-4a00-48b5-ab7d-fea18d6b4ca9" condition="contains">
+          <Context document="Network" search="Network/URI" type="mir" />
+          <Content type="string">&amp;q=</Content>
+        </IndicatorItem>
+      </Indicator>
+    </Indicator>
+  </definition>
+</ioc>
