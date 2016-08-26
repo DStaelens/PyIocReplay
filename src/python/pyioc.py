@@ -1,7 +1,7 @@
 import os
 import sys
 from lxml import etree
-
+from indicator_gen import IndicatorGenerator
 
 class Context(object):
 	
@@ -234,4 +234,6 @@ class PyIOC(object):
 		
 if __name__ == '__main__':
 		ioc = PyIOC(sys.argv[1])
+		generator = IndicatorGenerator(ioc.definition)
+		generator.generateIndicators()
 
